@@ -1,0 +1,21 @@
+backend:
+    functions:
+        - entry: dist/index.js
+          handler: handler
+          name: express-function
+          path: ./
+          type: httpServer
+    language:
+        name: js
+        packageManager: npm
+    path: ./
+    scripts:
+        deploy:
+            - npm install
+            - npm run build
+        local:
+            - npm install
+            - npm run build
+name: express-typescript-getting-started
+region: us-east-1
+yamlVersion: 2
